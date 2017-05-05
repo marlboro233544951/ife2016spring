@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>item 1</li>
+		<li>item 2</li>
+		<li>item 3</li>
+	</ul>
+	<fieldset>
+		<legend></legend>
+		<ul>
+			<li id="li1"><input name="color" type="radio" value="red" id="colorRed">
+			<label for="colorRed">Red</label></li>
+			<li><input name="color" type="radio" value="green" id="colorGreen">
+			<label for="colorGreen">Green</label></li>		
+			<li><input name="color" type="radio" value="blue" id="colorBlue">
+			<label for="colorBlue">Blue</label></li>
+		</ul>
+	</fieldset>
+	<script>
+		// var myList = document.getElementById("ul1");
+		// var deep = myList.cloneNode(true);
+		// var radios =document.getElementsByName("color");
+		// var items = myList.getElementsByTagName("li");
+		// console.log(radios);
+		// console.log(deep.childNodes);
+		// console.log(items);
+		// document.write("hello")
+		// var li = document.getElementById("li1");
+		// li.setAttribute("id","modify");
+		// li.setAttribute("data-city","lalala");
+		// console.log(li);
+		var text = "cat ,bat,sat, fat,aqt";
+		var result = text.replace(/(at)/g,"ond");
+		console.log(result);
+		console.log(text);
+	</script>
+</body>
+</html>

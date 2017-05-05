@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 14</title>
+  </head>
+<body>
+
+  <h3>污染城市列表</h3>
+  <ul id="aqi-list">
+<!--   
+    <li>第一名：福州（样例），10</li>
+    <li>第二名：福州（样例），10</li> -->
+  </ul>
+
+<script type="text/javascript">
+
+  var aqiData = [
+    ["北京", 90],
+    ["上海", 50],
+    ["福州", 10],
+    ["广州", 50],
+    ["成都", 90],
+    ["西安", 100]
+  ];
+  // var a =[1,2,2,3,4,5];
+  // var b;
+  // b = a.filter(function(element){return element > 2; });
+   // console.log(b);
+
+   // items = [{"name":"test1", "value":222}, {"name":"tttt", "value":"333"}]
+   // items.filter(function(){console.log(arguments)})  -------Arguments[3]0: Object1: 02: Array[2]callee: function (){console.log(arguments)}length: 3__proto__: Object
+
+// sort() 方法对数组的元素做原地的排序，并返回这个数组。 sort 可能不是稳定的。默认按照字符串的Unicode码位点（code point）排序。
+// 语法EDIT
+// arr.sort([compareFunction])
+// 如果没有指明 compareFunction ，那么元素会被转换为字符串并按照万国码位点顺序排序。例如 "Cherry" 会被排列到 "banana" 之前。当对数字进行排序的时候， 9 会出现在 80 之前，因为他们会先被转换为字符串，而 "80" 比 "9" 要靠前。
+// var fruit = ['cherries', 'apples', 'bananas'];
+// fruit.sort(); // ['apples', 'bananas', 'cherries']
+
+// var scores = [1, 10, 2, 21]; 
+// scores.sort(); // [1, 10, 2, 21]
+// // Watch out that 10 comes before 2,
+// // because '10' comes before '2' in Unicode code point order.
+
+// var things = ['word', 'Word', '1 Word', '2 Words'];
+// things.sort(); // ['1 Word', '2 Words', 'Word', 'word']
+// // In Unicode, numbers come before upper case letters,
+// // which come before lower case letters.
+  (function () {
+    /*
+    在注释下方编写代码
+    遍历读取aqiData中各个城市的数据
+    将空气质量指数大于60的城市显示到aqi-list的列表中
+    */     
+    
+    var contentStr = "";
+    aqiData.filter(function(element){return element[1] > 60;})      
+           .sort(function (d1,d2){ return d2[1] - d1[1]; })
+           .forEach(function (element,index){
+      contentStr += "<li>第" + (index+1) + "名：" + element[0] + "，" + element[1] + "</li>";    
+    });
+    
+    document.getElementById("aqi-list").innerHTML = contentStr;
+    
+  })();
+
+
+</script>
+
+</body>
+</html>

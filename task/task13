@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 13</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+  <button id="button">确认填写</button>
+
+  <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+
+<script type="text/javascript">
+
+(function() {
+  /*	
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的值，并显示在aqi-display中
+  */
+    var button = document.getElementById("button");
+    var dis = document.getElementById("aqi-display");
+    var input = document.getElementById("aqi-input");
+    function updateDisplay() {
+      dis.innerText = parseFloat(input.value);  //parseFloat() 函数可解析一个字符串，并返回一个浮点数。该函数指定字符串中的首个字符是否是数字。如果是，则对字符串进行解析，直到到达数字的末端为止，然后以数字返回该数字，而不是作为字符串。
+    }
+    button.onclick = updateDisplay;
+    input.onkeyup = function(evt) {   //onkeyup 事件会在键盘按键被松开时发生。keyCode=13是回车键
+      if (evt.keyCode == 13) {
+        updateDisplay();
+      }
+    }
+})();
+
+</script>
+
+</body>
+</html>
